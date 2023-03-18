@@ -13,6 +13,9 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
 {#        <link rel="stylesheet" href="{{ asset('assets/styles/style.css') }}">#}
+        {% block links %}
+
+        {% endblock %}
     </head>
     <body>
 
@@ -23,11 +26,13 @@
             </div>
             <div class="nav-menu">
                 <ul class="menu-box">
-                    <li>Accueil</li>
-                    <li>Services</li>
-                    <li>Contacts</li>
+                    <li><a href="{{ path('app_home') }}">Accueil</a> </li>
+                    <li><a href="{{ path('app_about') }}">Services</a> </li>
+                    <li><a href="#">Contacts</a> </li>
                 </ul>
+
             </div>
+
             <div class="drawer-menu-user">
 
                 <img id="avatarButton" type="button" data-dropdown-toggle="userDropdown" data-dropdown-placement="bottom-start" class="w-10 h-10 rounded-full cursor-pointer" src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745" alt="User dropdown">
@@ -56,7 +61,7 @@
 
                 <div class="drawer-btn">
                     <!-- drawer init and show -->
-                    <button class="ml-6 text-white bg-gray-600 rounded-lg text-sm px-5 py-2.5" type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
+                    <button class="ml-6 text-white rounded-lg font-bold text-lg px-5 py-2.5" type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
                         Menu
                     </button>
 
@@ -135,28 +140,30 @@
                         </div>
                     </div>
                 </div>
-                <div class="btn-menu-nav">
-                    <button id="mobile-menu-btn" type="button" class="active-btn inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-hamburger" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                    <button id="close-mobile-menu-btn" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-hamburger" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="h-6 w-6 text-gray-600"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />  <line x1="9" y1="9" x2="15" y2="15" />  <line x1="15" y1="9" x2="9" y2="15" /></svg>
-                    </button>
+                <button id="mobile-menu-btn" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-hamburger" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    </svg>
 
-                </div>
+                </button>
 
             </div>
         </nav>
         <div class="mobile_menu">
-
         </div>
+
+        {% block carousel %}
+
+        {% endblock %}
 
         {% block body %}
 
         {% endblock %}
     </body>
+
+    {% block js %}
+
+    {% endblock %}
+
 </html>
