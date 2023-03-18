@@ -11,6 +11,7 @@ import './styles/app.css';
 // start the Stimulus application
 import './bootstrap';
 import 'flowbite';
+import * as te from 'tw-elements';
 
 let mobile_menu = document.querySelector('.mobile_menu');
 let mobile_menu_btn = document.querySelector('#mobile-menu-btn');

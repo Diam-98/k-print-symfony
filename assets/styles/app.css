@@ -9,7 +9,7 @@
     top: 0;
     left: 0;
     right: 0;
-    background-color: rgba(26, 77, 16, 0.49);
+    background-color: rgba(0, 0, 0, 0.35);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -113,6 +113,24 @@
     height: 100%;
 }
 
+/*section services*/
+.services{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-row-gap: 30px;
+    grid-column-gap: 16px;
+    margin: 20px 0;
+}
+.service-item {
+    border: 1px solid;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.service-item:hover{
+    background-color: #3a369b;
+}
+
 /*section*/
 
 .section-overview {
@@ -142,97 +160,106 @@
 }
 
 .products {
-    margin-top: 50px;
-    height: 800px;
-    display: flex;
-    align-items: center;
-    column-gap: 7px;
-    row-gap: 10px;
-}
-
-.left-long-item {
-    width: 40%;
-    height: 100%;
-    background-color: #f3f4f5;
-    border-radius: 10px;
-}
-
-.right-items {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 60%;
-    column-gap: 7px;
-    row-gap: 7px;
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-row-gap: 30px;
+    grid-column-gap: 16px;
 }
 
 .product-item {
-    width: 49%;
-    height: 250px;
-    background-color: #f3f4f5;
-    border-radius: 10px;
-}
-
-.product-item img, .left-long-item img, .large-product-item img{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    z-index: 1000;
-}
-
-.large-product-item {
-    margin-top: 7px;
-    width: 100%;
-    height: 400px;
-    background-color: #f3f4f5;
-    border-radius: 10px;
-}
-
-@media (max-width: 760px) {
-    .products {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .left-long-item {
-        width: 100%;
-        height: 100%;
-        background-color: #f3f4f5;
-        border-radius: 10px;
-    }
-
-    .right-items {
-        width: 100%;
-    }
-}
-
-@media (max-width: 760px) {
-    .product-item {
-        width: 100%;
-        height: 300px;
-    }
-}
-
-.card-background {
     position: relative;
+    height: 420px;
+    border-radius: 10px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.27);
-    height: 100%;
+    align-items: flex-end;
+    transition: 0.4s ease-out;
+}
+
+.product-item:hover {
+    transform: translateY(20px);
+}
+
+.product-item:hover:before {
+    opacity: 1;
+}
+
+.product-item img{
     width: 100%;
-    z-index: 2002;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+}
+
+.product-item:hover .cover {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.product-item:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    transition: 0.5s;
     opacity: 0;
 }
 
-.card-background a {
-    padding: 7px 15px;
-    background-color: #333333;
-    color: whitesmoke;
+.product-item .cover{
+    position: relative;
+    z-index: 3;
+    color: white;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.card-background:hover{
-    opacity: 10;
+.product-item .cover .info{
+    width: 50%;
+    margin-bottom: 50px;
 }
 
+.product-item .cover .info h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.product-item .cover .info p {
+    margin-bottom: 10px;
+}
+
+.product-item .cover .info a {
+    margin-top: 7px;
+    padding: 10px 15px;
+    background-color: #000000;
+    border-radius: 10px;
+}
+
+/*section pub*/
+.publication-card {
+    width: 100%;
+    height: 500px;
+    background-color: rgba(176, 65, 62, 0.89);
+}
+
+/*category-content*/
+.category-content {
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-row-gap: 30px;
+    grid-column-gap: 16px;
+}
